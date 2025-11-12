@@ -1,0 +1,128 @@
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# production build
+/build
+/dist
+
+# debug logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# local env files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# editor directories and files
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# VSCode cache
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# Optional TypeScript build cache
+/tsconfig.tsbuildinfo
+
+# coverage reports
+/coverage
+
+# temporary build artifacts
+*.log
+*.pid
+*.seed
+*.pid.lock
+
+# test cache
+/.jest-cache/
+/.jest-test-results.json
+
+# storybook
+/out
+/storybook-static
+
+# eslint / prettier caches
+.eslintcache
+.prettiercache
+
+# local development files
+*.local
+*.env.backup
+
+# optional npm cache directory
+.npm
+
+# optional REPL history
+.node_repl_history
+
+# optional Yarn v2+ cache
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+
+# temporary data files
+tmp/
+temp/
+
+# lock files (if you prefer only one manager)
+# comment out others based on your package manager
+package-lock.json
+# yarn.lock
+# pnpm-lock.yaml
+
+# firebase / amplify / netlify / vercel generated
+.firebase/
+.amplify/
+.netlify/
+.vercel/
+
+# Next.js specific
+.next/
+out/
+
+# Vite specific
+vite.config.ts.timestamp-*
+vite.config.ts.rollup-cache
+
+# coverage and reports
+coverage/
+report.html
+
+# IDE and OS junk
+*.orig
+*.log
+*.tmp
+*.bak
+*.old
+
+# MUI-related
+.mui-cache
