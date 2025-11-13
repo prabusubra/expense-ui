@@ -1,9 +1,13 @@
 import React from 'react';
+import { RHFormProvider } from '../context/RHFormProvider';
+import AccessMatrixTable from '../components/AccessMatrixTable';
 
 const ReportsPage = () => {
     return (
         <div>
-            ReportsPage
+            <RHFormProvider>
+                <AccessMatrixTable />
+            </RHFormProvider>
         </div>
     );
 };
