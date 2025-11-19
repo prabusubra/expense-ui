@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   Table,
   TableHead,
@@ -14,11 +14,25 @@ import {
 } from "@mui/material";
 import { useFormContext, useFieldArray } from "react-hook-form";
 import { AccessMatrixForm } from "../types/type";
+import { DEFAULT_ACCESS_MATRIX } from "../utils/constants";
 
 export default function AccessMatrixTable() {
-  const { control, register, handleSubmit, watch } =
+  const { control, register, handleSubmit, watch, reset } =
     useFormContext<AccessMatrixForm>();
   const { fields } = useFieldArray({ control, name: "accessMatrix" });
+
+  const values = watch("accessMatrix");
+  useEffect(() => {
+    const current = watch("accessMatrix");
+  
+    // Run only once: if no values exist (first step load)
+    if (!current || current.length === 0) {
+      reset((prev) => ({
+        ...prev,
+        accessMatrix: DEFAULT_ACCESS_MATRIX,
+      }));
+    }
+  }, []);
 
   const onSubmit = (data: AccessMatrixForm) => {
     console.log("📦 Submitted:", data);
@@ -53,7 +67,9 @@ export default function AccessMatrixTable() {
                   <TextField
                     select
                     size="small"
-                    {...register(`accessMatrix.${rowIndex}.dev` as const)}
+                    value={watch(`accessMatrix.${rowIndex}.dev`) || "yes"}
+                            {...register(`accessMatrix.${rowIndex}.dev` as const)}
+                   // {...register(`accessMatrix.${rowIndex}.dev` as const)}
                   >
                     <MenuItem value="yes">Yes</MenuItem>
                     <MenuItem value="no">No</MenuItem>
@@ -65,6 +81,7 @@ export default function AccessMatrixTable() {
                   <TextField
                     select
                     size="small"
+                    value={watch(`accessMatrix.${rowIndex}.dev`) || "yes"}
                     {...register(`accessMatrix.${rowIndex}.production` as const)}
                   >
                     <MenuItem value="yes">Yes</MenuItem>
@@ -77,6 +94,7 @@ export default function AccessMatrixTable() {
                   <TextField
                     select
                     size="small"
+                    value={watch(`accessMatrix.${rowIndex}.dev`) || "yes"}
                     {...register(`accessMatrix.${rowIndex}.quality` as const)}
                   >
                     <MenuItem value="yes">Yes</MenuItem>

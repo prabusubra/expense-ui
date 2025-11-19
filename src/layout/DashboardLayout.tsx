@@ -24,6 +24,13 @@ import MailIcon from '@mui/icons-material/Mail';
 import AccountCircle from '@mui/icons-material/AccountCircle';
 import { useLocation, useNavigate } from 'react-router-dom';
 import HomeIcon from '@mui/icons-material/Home';
+import ReceiptIcon from '@mui/icons-material/Receipt';
+import CategoryIcon from '@mui/icons-material/Category';
+import WalletIcon from '@mui/icons-material/Wallet';
+import SummarizeIcon from '@mui/icons-material/Summarize';
+import ManageAccountsIcon from '@mui/icons-material/ManageAccounts';
+import SubscriptionsIcon from '@mui/icons-material/Subscriptions';
+import SettingsIcon from '@mui/icons-material/Settings';
 
 const drawerWidth = 240;
 
@@ -85,13 +92,13 @@ const Drawer = styled(MuiDrawer, {
 
 const navItems = [
   { label: 'Home', path: '/home', icon: <HomeIcon /> },
-  { label: 'Transactions', path: '/transactions', icon: <MailIcon /> },
-  { label: 'Categories', path: '/categories', icon: <MailIcon /> },
-  { label: 'Budgets', path: '/budgets', icon: <MailIcon /> },
-  { label: 'Reports', path: '/reports', icon: <MailIcon /> },
-  { label: 'Accounts', path: '/accounts', icon: <MailIcon /> },
-  { label: 'Subscriptions', path: '/subscriptions', icon: <MailIcon /> },
-  { label: 'Settings', path: '/settings', icon: <MailIcon /> },
+  { label: 'Transactions', path: '/transactions', icon: <ReceiptIcon /> },
+  { label: 'Categories', path: '/categories', icon: <CategoryIcon /> },
+  { label: 'Budgets', path: '/budgets', icon: <WalletIcon /> },
+  { label: 'Reports', path: '/reports', icon: <SummarizeIcon /> },
+  { label: 'Accounts', path: '/accounts', icon: <ManageAccountsIcon /> },
+  { label: 'Subscriptions', path: '/subscriptions', icon: <SubscriptionsIcon /> },
+  { label: 'Settings', path: '/settings', icon: <SettingsIcon /> },
 ];
 
 export default function DashboardLayout({ children }: { children: React.ReactNode }) {
